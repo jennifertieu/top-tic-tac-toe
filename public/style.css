@@ -30,7 +30,24 @@ header {
 .square {
     height: 100px;
     width: 100px;
-    border: 1px solid black;
 }
 
-.square:nth-child()
+/* top row */
+.square:nth-child(-n+3){
+    border-bottom: 1px solid black;
+}
+
+/* bottom row */
+.square:nth-child(n+7){
+    border-top: 1px solid black;
+}
+
+/* right row */
+.square:nth-child(-3n+9){
+    border-left: 1px solid black;
+}
+
+/* left row */
+.square:nth-child(3n+1){
+    border-right: 1px solid black;
+}

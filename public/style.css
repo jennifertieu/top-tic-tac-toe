@@ -30,6 +30,10 @@ header {
 .square {
     height: 100px;
     width: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
 }
 
 /* top row */

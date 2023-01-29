@@ -110,7 +110,6 @@
             if (gameBoard.fill(+s.dataset.index, activePlayer.marker)){
                 // update DOM
                 s.textContent = activePlayer.marker;
-                console.log(gameBoard.board);
                 // check if current active player wins
                 if (gameController.checkWinner()){
                     // end game

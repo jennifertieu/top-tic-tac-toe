@@ -17,6 +17,7 @@ header {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    gap: 1rem;
 }
 
 .actions {
@@ -51,6 +52,12 @@ header {
     color: #fff;
 }
 
+.status {
+    font-style: italic;
+    font-weight: 600;
+    color: lightblue;
+}
+
 /* Board */
 .board {
     display: grid;
@@ -64,6 +71,7 @@ header {
     justify-content: center;
     align-items: center;
     font-size: 2.5rem;
+    position: relative;
 }
 
 /* top row */

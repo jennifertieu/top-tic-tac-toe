@@ -63,6 +63,12 @@
             if ([gameBoard.board[0][1], gameBoard.board[1][1], gameBoard.board[2][1]].every((i) => i === activePlayer.marker)){
                 return true;
             }
+            if ([gameBoard.board[0][0], gameBoard.board[1][0], gameBoard.board[2][0]].every((i) => i === activePlayer.marker)){
+                return true;
+            }
+            if ([gameBoard.board[0][2], gameBoard.board[1][2], gameBoard.board[2][2]].every((i) => i === activePlayer.marker)){
+                return true;
+            }
             return false;
         };
         const updateTurn = () => {
@@ -73,6 +79,7 @@
             // reset game if player hits reset button
             activePlayer = playerX;
             gamePlaying = true;
+            status.textContent = `${activePlayer.name} Turn`;
         };
 
         return {
@@ -87,10 +94,13 @@
     };
 
     // initialize game
-    const playerO = Player("Player 1", "O");
-    const playerX = Player("Player 2", "X");
+    const playerO = Player("Player 2", "O");
+    const playerX = Player("Player 1", "X");
     let activePlayer = playerX;
     let gamePlaying = true;
+
+    let status = document.getElementById("status-text");
+    status.textContent = `${activePlayer.name} Turn`;
     
     // create board in DOM
     const boardNode = document.querySelector(".board");
@@ -118,6 +128,7 @@
                     // end game
                     gamePlaying = false;
                     // display winner
+                    status.textContent = `${activePlayer.name} Wins!`;
                     return;
                 }
                 // check if the board is filled
@@ -125,10 +136,12 @@
                     // game tied, end game
                     gamePlaying = false;
                     // display tie
+                    status.textContent = "It's a Tie. Restart Game?";
                     return;
                 }
                 // if fill was successful update turn
                 gameController.updateTurn();
+                status.textContent = `${activePlayer.name} Turn`;
             };
 
         });

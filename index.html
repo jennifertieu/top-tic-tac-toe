@@ -11,14 +11,22 @@
     <header>
         <h1>Tic-Tac-Toe</h1>
         <div class="actions">
-            <div class="player-name">
-                <input type="text">
+            <div class="player-details">
+                <form id="playerOneForm" action="post">
+                    <label for="player-one-name">Player 1 (X):</label>
+                    <input id="player-one-name" name="player-one-name" type="text" maxlength="100" placeholder="Player One">
+                    <button type="submit">Update</button>
+                </form>
             </div>
             <div>
                 <button type="button" id="resetButton">Restart Game</button>
             </div>
-            <div class="player-name">
-                <input type="text">
+            <div class="player-details">
+                <form id="playerTwoForm" action="post">
+                    <label for="player-two-name">Player 2 (O):</label>
+                    <input id="player-two-name" name="player-two-name" type="text" maxlength="100" placeholder="Player Two">
+                    <button type="submit">Update</button>
+                </form>
             </div>
         </div>
     </header>

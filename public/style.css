@@ -35,14 +35,9 @@ header {
     color: #fff;
 }
 
-.player-details form {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-}
-
-.player-details label {
-    text-align: center;
+.player-details {
+    font-weight: 600;
+    font-size: 1.5rem;
 }
 
 #resetButton {

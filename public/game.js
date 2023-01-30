@@ -60,6 +60,9 @@
             if ([gameBoard.board[0][2], gameBoard.board[1][1], gameBoard.board[2][0]].every((i) => i === activePlayer.marker)){
                 return true;
             }
+            if ([gameBoard.board[0][1], gameBoard.board[1][1], gameBoard.board[2][1]].every((i) => i === activePlayer.marker)){
+                return true;
+            }
             return false;
         };
         const updateTurn = () => {
@@ -84,8 +87,8 @@
     };
 
     // initialize game
-    const playerO = Player("player 1", "O");
-    const playerX = Player("player 2", "X");
+    const playerO = Player("Player 1", "O");
+    const playerX = Player("Player 2", "X");
     let activePlayer = playerX;
     let gamePlaying = true;
     

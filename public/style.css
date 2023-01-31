@@ -93,3 +93,7 @@ header {
 .square:nth-child(3n+1){
     border-right: 1px solid black;
 }
+
+.game-end {
+    color: red;
+}

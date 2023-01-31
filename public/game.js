@@ -79,7 +79,7 @@
             // reset game if player hits reset button
             activePlayer = playerX;
             gamePlaying = true;
-            status.textContent = `${activePlayer.name} Turn`;
+            statusText.textContent = `${activePlayer.name} Turn`;
         };
 
         return {
@@ -99,8 +99,8 @@
     let activePlayer = playerX;
     let gamePlaying = true;
 
-    let status = document.getElementById("status-text");
-    status.textContent = `${activePlayer.name} Turn`;
+    let statusText = document.getElementById("status-text");
+    statusText.textContent = `${activePlayer.name} Turn`;
     
     // create board in DOM
     const boardNode = document.querySelector(".board");
@@ -128,7 +128,8 @@
                     // end game
                     gamePlaying = false;
                     // display winner
-                    status.textContent = `${activePlayer.name} Wins!`;
+                    statusText.textContent = `${activePlayer.name} Wins!`;
+                    setStatusColor();
                     return;
                 }
                 // check if the board is filled
@@ -136,12 +137,13 @@
                     // game tied, end game
                     gamePlaying = false;
                     // display tie
-                    status.textContent = "It's a Tie. Restart Game?";
+                    statusText.textContent = "It's a Tie. Restart Game?";
+                    setStatusColor();
                     return;
                 }
                 // if fill was successful update turn
                 gameController.updateTurn();
-                status.textContent = `${activePlayer.name} Turn`;
+                statusText.textContent = `${activePlayer.name} Turn`;
             };
 
         });
@@ -155,5 +157,13 @@
             s.textContent = "";
         })
     });
+
+    function setStatusColor(){
+        const status = document.querySelector(".status");
+        if (status.classList.contains("game-end")){
+            return status.classList.remove("game-end");
+        };
+        return status.classList.add("game-end");
+    }
 
 })(document, window);

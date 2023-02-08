@@ -10,3 +10,6 @@ The Odin Project Tic-Tac-Toe
 - Think carefully about where each bit of logic should reside. Each little piece of functionality should be able to fit in the game, player or gameboard objects.. but take care to put them in “logical” places. Spending a little time brainstorming here can make your life much easier later! 
 5. Build the logic that checks for when the game is over! Should check for 3-in-a-row and a tie.
 6. Clean up the interface to allow players to put in their names, include a button to start/restart the game and add a display element that congratulates the winning player!
+
+# Article
+https://jteacodes.hashnode.dev/my-implementation-of-the-odin-project-tic-tac-toe
